@@ -1,0 +1,134 @@
+/* reset.css */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;vertical-align:baseline;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+.clr { height:1px;font-size:1%;clear:both; display:block }
+
+/* general.css */
+.error, .notice, .warning {padding:.8em;margin-bottom:10px;border:2px solid #ddd; }
+.error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+.warning {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.notice {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.error a {color:#8a1f11; font-weight:bold; }
+.warning a {color:#514721; font-weight:bold; }
+.notice a {color:#264409; font-weight:bold }
+
+
+/* colors:
+3fe844 - green
+57f5e8 - blue
+*/
+body {
+	padding-bottom:20px;
+	font-size:0.9em;
+}
+.top {
+	border-bottom:1px solid #ccc;
+	padding-bottom:5px;
+	margin-bottom:5px;
+	background-color:#eee;
+}
+.wrapper {
+	font-size:0.8em;
+	width:760px;
+	margin:0 auto;
+}
+
+.head {
+}
+
+.logo {
+	float:left;
+	margin:5px;
+	font-size:40px;
+	font-weight:400;
+}
+.logo a,
+.logo a:hover {
+  text-decoration:none;
+  background-color:transparent;
+  color:green;
+	font-weight:400;
+}
+
+.logo a span.alt {
+	color:red;
+}
+
+.options {
+	float:right;
+	margin-top:40px;
+	margin-right:10px;
+}
+
+.new_status textarea {
+	height:90px;
+	width:100%;
+}
+
+.new_status .submit {
+	margin-top:5px;
+	margin-bottom:5px;
+	text-align:right;
+}
+
+.body {
+}
+.main {
+	width:540px;
+	float:left;
+	padding:5px;
+}
+
+.sidebar {	
+	width:190px;
+	float:right;
+	padding:5px;
+}
+
+.centered {
+	text-align:center;
+}
+/* statuses */
+.statuses {}
+.statuses .status { border-bottom:1px dashed #ccc; padding:5px;}
+.statuses .status-alt {}
+.statuses .status .text {}
+.statuses .status .info { text-align:right;font-size:0.9em; }
+
+h1 {
+	font-size:18px;
+	margin:0;
+	padding:0;
+	margin-bottom:5px;
+}
+div.login {
+	position:relative;
+	left:250px;
+	top:40px;
+	width:250px;
+	border:1px solid #ddd;
+	background-color:#eee;
+	padding:10px;
+}
+
+div.login input[type=text],
+div.login input[type=password] {
+  width: 100%;
+}
+
+div.new_user {
+	position:relative;
+	left:270px;
+	top:40px;
+	width:230px;
+	
+	border:1px solid #ddd;
+	background-color:#eee;
+	padding:10px;	
+}

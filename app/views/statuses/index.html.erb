@@ -1,0 +1,35 @@
+
+<% if @user %>
+	<p>You are viewing <%= @user.login %>'s statuses
+<% if (@user!=current_user)%>	
+	<% if current_user.friends.collect { |obj| obj.friend }.include?(@user) %>
+		<%= link_to('stop following', unfollow_user_path(@user))%>
+	<% else %>
+		<%= link_to('follow', follow_user_path(@user))%>
+	<% end %>
+<% end %>
+	</p>
+<% else %>
+<p>You are viewing your personal timeline (you and your friends)</p>
+<% end %>
+<%= render :partial => 'statuses/form' %>
+<div class="statuses">
+<% for status in @statuses %>
+  <div class="status">
+	<div class="text">
+		<span class="name">
+		  <b><%=  link_to(status.user.login, user_path(status.user)) %></b>
+		</span>
+		
+		<%=h status.status %>
+	</div>
+	<div class="info">
+		<% if status.user == current_user %>
+    		<%= link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+		<%=h status.created_at.strftime('%H:%M, %d/%m/%Y') %>
+
+	</div>
+  </div>
+<% end %>
+</div> <!-- statuses -->

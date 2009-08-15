@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Statusr <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold', 'screen' %>
+  <%= javascript_include_tag("prototype", "effects", "controls", "dragdrop") %> 
+
+</head>
+<body>
+<div class="top">
+<div class="wrapper">
+	<div class="head">
+		<div class="logo"><a href="/">status<span class="alt">r</span></a></div> <!-- .options -->
+		<div class="options">
+			
+			<% if logged_in? %>
+
+				<p>
+					Logged in as <b><%= link_to(current_user.login, user_path(current_user)) %></b> | 
+				<%= link_to 'Home', '/' %> 
+				<%= link_to 'Settings', edit_user_path(current_user) %> 
+			
+				<%= link_to 'Logout', '/logout' %>
+					
+				</p>
+			<% end %>
+
+						
+		</div> <!-- .options -->
+		<div class="clr">&nbsp;</div>
+	</div> <!-- .head -->
+</div> <!-- .wrapper -->
+</div> <!-- .top -->
+<div class="wrapper">
+
+	<div class="body">
+	   
+	  <% flash.each_pair do |key, value| %>
+      <div class="flash <%= key %>"><%= flash[key] %></div>
+    <% end %>
+     
+	  <div class="main">
+		
+	     <%= yield  %>
+		
+	  </div> <!-- .main -->
+	  <div class="sidebar">
+		<% if current_user and current_user.friends.size>0 %>
+		<p>Following:</p>
+			<% current_user.friends.each do |friend| %>
+				<p><%= link_to(friend.friend.login, user_path(friend.friend)) %></p>
+			<% end %>
+		<% end %>
+		 &nbsp;
+		<div id="friends">
+			
+		</div>
+	  </div> <!-- .sidebar -->
+	  <div class="clr">&nbsp;</div>
+	</div> <!-- .body -->
+</div> <!-- .wrapper -->
+
+
+</body>
+</html>
